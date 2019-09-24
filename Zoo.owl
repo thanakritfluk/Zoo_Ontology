@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.semanticweb.org/thanakrit/ontologies/2019/8/Zoo">
-    <Prefix name="" IRI="http://www.semanticweb.org/thanakrit/ontologies/2019/8/untitled-ontology-7"/>
+    <Prefix name="" IRI="http://www.semanticweb.org/thanakrit/ontologies/2019/8/Zoo"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -115,7 +115,13 @@
         <Class IRI="#Locker"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#LongHair"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Mammals"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MediumHair"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Membership"/>
@@ -160,7 +166,7 @@
         <Class IRI="#Shop"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Skin"/>
+        <Class IRI="#ShortHair"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Souvenirs"/>
@@ -244,9 +250,6 @@
         <ObjectProperty IRI="#hasReproduction"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasSkin"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasTicket"/>
     </Declaration>
     <Declaration>
@@ -271,6 +274,9 @@
         <DataProperty IRI="#hasCloseHour"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#hasCloseTime"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#hasName"/>
     </Declaration>
     <Declaration>
@@ -278,6 +284,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasOpeningHour"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasOpeningTime"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasPrice"/>
@@ -349,6 +358,55 @@
         <NamedIndividual IRI="#Wednesday"/>
     </Declaration>
     <EquivalentClasses>
+        <Class IRI="#Animal"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasEcologicalType"/>
+            <Class IRI="#Ecological"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Animal"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasReproduction"/>
+            <Class IRI="#Reproduction"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AnimalZone"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hasAnimal"/>
+            <Class IRI="#Animal"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AnimalZone"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Aquarium"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasAnimal"/>
+            <Class IRI="#Fish"/>
+        </ObjectAllValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#City"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#isLocatedIn"/>
+            <Class IRI="#Country"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Country"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#isLocatedIn"/>
+            <Class IRI="#Continent"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#DayOfWeek"/>
         <ObjectOneOf>
             <NamedIndividual IRI="#Friday"/>
@@ -359,6 +417,13 @@
             <NamedIndividual IRI="#Tuesday"/>
             <NamedIndividual IRI="#Wednesday"/>
         </ObjectOneOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Location"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="#hasAddress"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMinCardinality>
     </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#Month"/>
@@ -376,6 +441,46 @@
             <NamedIndividual IRI="#October"/>
             <NamedIndividual IRI="#September"/>
         </ObjectOneOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#OpeningHour"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasDayOfWeek"/>
+            <Class IRI="#DayOfWeek"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#OpeningHour"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasMonth"/>
+            <Class IRI="#Month"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#OpeningHour"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="#hasOpeningDay"/>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:integer"/>
+                <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                    <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">31</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#OpeningHour"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="#hasOpeningHour"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#OpeningHour"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasCloseHour"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataExactCardinality>
     </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#Ticket"/>
@@ -411,17 +516,38 @@
         <Class IRI="#Animal"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Animal"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasHair"/>
+            <Class IRI="#Hair"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Animal"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hasColor"/>
+            <Class IRI="#Color"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Animal"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasRegion"/>
+            <Class IRI="#Region"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#AnimalZone"/>
         <DataSomeValuesFrom>
-            <DataProperty IRI="#hasCloseHour"/>
+            <DataProperty IRI="#hasCloseTime"/>
             <Datatype abbreviatedIRI="xsd:dateTime"/>
         </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AnimalZone"/>
         <DataMinCardinality cardinality="1">
-            <DataProperty IRI="#hasName"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
+            <DataProperty IRI="#hasOpeningTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
         </DataMinCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -505,12 +631,41 @@
         <Class IRI="#Animal"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Location"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasCity"/>
+            <Class IRI="#City"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Location"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasCountry"/>
+            <Class IRI="#Continent"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Location"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasCountry"/>
+            <Class IRI="#Country"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Locker"/>
         <Class IRI="#Accesibility"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#LongHair"/>
+        <Class IRI="#Hair"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Mammals"/>
         <Class IRI="#Animal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediumHair"/>
+        <Class IRI="#Hair"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Membership"/>
@@ -547,6 +702,10 @@
     <SubClassOf>
         <Class IRI="#Shop"/>
         <Class IRI="#Facilities"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ShortHair"/>
+        <Class IRI="#Hair"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Souvenirs"/>
@@ -633,24 +792,6 @@
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataExactCardinality>
     </SubClassOf>
-    <DisjointClasses>
-        <Class IRI="#Activity"/>
-        <Class IRI="#Animal"/>
-        <Class IRI="#AnimalZone"/>
-        <Class IRI="#Color"/>
-        <Class IRI="#Ecological"/>
-        <Class IRI="#Event"/>
-        <Class IRI="#Facilities"/>
-        <Class IRI="#Hair"/>
-        <Class IRI="#Location"/>
-        <Class IRI="#OpeningHour"/>
-        <Class IRI="#Place"/>
-        <Class IRI="#Region"/>
-        <Class IRI="#Reproduction"/>
-        <Class IRI="#Skin"/>
-        <Class IRI="#Ticket"/>
-        <Class IRI="#Zoo"/>
-    </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Activity"/>
         <Class IRI="#Event"/>
@@ -871,9 +1012,6 @@
         <ObjectProperty IRI="#hasReproduction"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#hasSkin"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
         <ObjectProperty IRI="#hasTicket"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
@@ -926,9 +1064,6 @@
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#hasMonth"/>
-    </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#hasSkin"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#hasTicket"/>
@@ -1003,10 +1138,6 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasReproduction"/>
-        <Class IRI="#Animal"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasSkin"/>
         <Class IRI="#Animal"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1090,10 +1221,6 @@
         <Class IRI="#Reproduction"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasSkin"/>
-        <Class IRI="#Skin"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasTicket"/>
         <Class IRI="#Ticket"/>
     </ObjectPropertyRange>
@@ -1117,6 +1244,10 @@
         <DataProperty IRI="#hasAddress"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasOpeningTime"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
     <DataPropertyDomain>
         <DataProperty IRI="#hasAddress"/>
         <Class IRI="#Location"/>
@@ -1130,6 +1261,10 @@
         <Class IRI="#OpeningHour"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#hasCloseTime"/>
+        <Class IRI="#AnimalZone"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#hasName"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </DataPropertyDomain>
@@ -1140,6 +1275,10 @@
     <DataPropertyDomain>
         <DataProperty IRI="#hasOpeningHour"/>
         <Class IRI="#OpeningHour"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasOpeningTime"/>
+        <Class IRI="#AnimalZone"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasPrice"/>
@@ -1166,6 +1305,10 @@
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="#hasCloseTime"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#hasName"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
@@ -1175,6 +1318,10 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasOpeningHour"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasOpeningTime"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DataPropertyRange>
