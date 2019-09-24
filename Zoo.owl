@@ -64,6 +64,9 @@
         <Class IRI="#Country"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#DailyPass"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#DayOfWeek"/>
     </Declaration>
     <Declaration>
@@ -115,6 +118,9 @@
         <Class IRI="#Mammals"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Membership"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Month"/>
     </Declaration>
     <Declaration>
@@ -148,7 +154,7 @@
         <Class IRI="#Restaurant"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Sawanna"/>
+        <Class IRI="#Sawannah"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Shop"/>
@@ -172,7 +178,7 @@
         <Class IRI="#Toilet"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Topical"/>
+        <Class IRI="#TropicalForest"/>
     </Declaration>
     <Declaration>
         <Class IRI="#VenueFuntion"/>
@@ -196,6 +202,9 @@
         <ObjectProperty IRI="#hasAnimal"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasAnimalZone"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasCity"/>
     </Declaration>
     <Declaration>
@@ -209,6 +218,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasDayOfWeek"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEcologicalType"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasEvent"/>
@@ -241,16 +253,13 @@
         <ObjectProperty IRI="#hasTicketType"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasZone"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isEcological"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#isLivedIn"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isLocatedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPlacedIn"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasAddress"/>
@@ -262,10 +271,10 @@
         <DataProperty IRI="#hasCloseHour"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasDay"/>
+        <DataProperty IRI="#hasName"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasName"/>
+        <DataProperty IRI="#hasOpeningDay"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasOpeningHour"/>
@@ -279,6 +288,116 @@
     <Declaration>
         <DataProperty IRI="#hasTicketType"/>
     </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#April"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#August"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#December"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Febuary"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Friday"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#January"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#July"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#June"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#March"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#May"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Monday"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#November"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#October"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Saturday"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#September"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sunday"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Thrusday"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Thursday"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tuesday"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Wednesday"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#DayOfWeek"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#Friday"/>
+            <NamedIndividual IRI="#Monday"/>
+            <NamedIndividual IRI="#Saturday"/>
+            <NamedIndividual IRI="#Sunday"/>
+            <NamedIndividual IRI="#Thursday"/>
+            <NamedIndividual IRI="#Tuesday"/>
+            <NamedIndividual IRI="#Wednesday"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Month"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#April"/>
+            <NamedIndividual IRI="#August"/>
+            <NamedIndividual IRI="#December"/>
+            <NamedIndividual IRI="#Febuary"/>
+            <NamedIndividual IRI="#January"/>
+            <NamedIndividual IRI="#July"/>
+            <NamedIndividual IRI="#June"/>
+            <NamedIndividual IRI="#March"/>
+            <NamedIndividual IRI="#May"/>
+            <NamedIndividual IRI="#November"/>
+            <NamedIndividual IRI="#October"/>
+            <NamedIndividual IRI="#September"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Ticket"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="#hasTicketFee"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
+        </DataMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Zoo"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hasAnimalZone"/>
+            <Class IRI="#AnimalZone"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Zoo"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hasOpeningSchedule"/>
+            <Class IRI="#OpeningHour"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Accesibility"/>
         <Class IRI="#Facilities"/>
@@ -290,6 +409,20 @@
     <SubClassOf>
         <Class IRI="#Amphibian"/>
         <Class IRI="#Animal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnimalZone"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasCloseHour"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnimalZone"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMinCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Aquarium"/>
@@ -332,6 +465,10 @@
         <Class IRI="#Place"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#DailyPass"/>
+        <Class IRI="#Ticket"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#DesertEdge"/>
         <Class IRI="#OutdoorZone"/>
     </SubClassOf>
@@ -376,6 +513,10 @@
         <Class IRI="#Animal"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Membership"/>
+        <Class IRI="#Ticket"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Ommivore"/>
         <Class IRI="#Ecological"/>
     </SubClassOf>
@@ -400,7 +541,7 @@
         <Class IRI="#Shop"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Sawanna"/>
+        <Class IRI="#Sawannah"/>
         <Class IRI="#OutdoorZone"/>
     </SubClassOf>
     <SubClassOf>
@@ -416,15 +557,25 @@
         <Class IRI="#Facilities"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#TicketType"/>
         <Class IRI="#Ticket"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasTicketType"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TicketType"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasAgeRange"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Toilet"/>
         <Class IRI="#Facilities"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Topical"/>
+        <Class IRI="#TropicalForest"/>
         <Class IRI="#OutdoorZone"/>
     </SubClassOf>
     <SubClassOf>
@@ -447,6 +598,179 @@
         <Class IRI="#WheelChair"/>
         <Class IRI="#Accesibility"/>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Zoo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasEvent"/>
+            <Class IRI="#Event"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Zoo"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasTicket"/>
+            <Class IRI="#Ticket"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Zoo"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hasFacilities"/>
+            <Class IRI="#Facilities"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Zoo"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#isPlacedIn"/>
+            <Class IRI="#Location"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Zoo"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Activity"/>
+        <Class IRI="#Animal"/>
+        <Class IRI="#AnimalZone"/>
+        <Class IRI="#Color"/>
+        <Class IRI="#Ecological"/>
+        <Class IRI="#Event"/>
+        <Class IRI="#Facilities"/>
+        <Class IRI="#Hair"/>
+        <Class IRI="#Location"/>
+        <Class IRI="#OpeningHour"/>
+        <Class IRI="#Place"/>
+        <Class IRI="#Region"/>
+        <Class IRI="#Reproduction"/>
+        <Class IRI="#Skin"/>
+        <Class IRI="#Ticket"/>
+        <Class IRI="#Zoo"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Activity"/>
+        <Class IRI="#Event"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Activity"/>
+        <Class IRI="#Ticket"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Body"/>
+        <Class IRI="#Egg"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#City"/>
+        <Class IRI="#Continent"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#City"/>
+        <Class IRI="#Country"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Continent"/>
+        <Class IRI="#Country"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Continent"/>
+        <Class IRI="#Region"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Event"/>
+        <Class IRI="#Ticket"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#IndoorZone"/>
+        <Class IRI="#OutdoorZone"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Location"/>
+        <Class IRI="#Place"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Ticket"/>
+        <Class IRI="#TicketType"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Month"/>
+        <NamedIndividual IRI="#April"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Month"/>
+        <NamedIndividual IRI="#August"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Month"/>
+        <NamedIndividual IRI="#December"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Month"/>
+        <NamedIndividual IRI="#Febuary"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DayOfWeek"/>
+        <NamedIndividual IRI="#Friday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Month"/>
+        <NamedIndividual IRI="#January"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Month"/>
+        <NamedIndividual IRI="#July"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Month"/>
+        <NamedIndividual IRI="#June"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Month"/>
+        <NamedIndividual IRI="#March"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Month"/>
+        <NamedIndividual IRI="#May"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DayOfWeek"/>
+        <NamedIndividual IRI="#Monday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Month"/>
+        <NamedIndividual IRI="#November"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Month"/>
+        <NamedIndividual IRI="#October"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DayOfWeek"/>
+        <NamedIndividual IRI="#Saturday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Month"/>
+        <NamedIndividual IRI="#September"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DayOfWeek"/>
+        <NamedIndividual IRI="#Sunday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DayOfWeek"/>
+        <NamedIndividual IRI="#Thursday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DayOfWeek"/>
+        <NamedIndividual IRI="#Tuesday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DayOfWeek"/>
+        <NamedIndividual IRI="#Wednesday"/>
+    </ClassAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasCity"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
@@ -459,9 +783,175 @@
         <ObjectProperty IRI="#hasCountry"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasRegion"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPlacedIn"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasAnimal"/>
+        <ObjectProperty IRI="#isLivedIn"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasCity"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasContinent"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasCountry"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasEcologicalType"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasRegion"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasReproduction"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isLocatedIn"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isPlacedIn"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasAnimal"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#isLivedIn"/>
+    </InverseFunctionalObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasAnimal"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasAnimalZone"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasCity"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasColor"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasContinent"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasCountry"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasDayOfWeek"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasEcologicalType"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasEvent"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasFacilities"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasHair"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasMonth"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasOpeningSchedule"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasRegion"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasReproduction"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasSkin"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasTicket"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasTicketType"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isLivedIn"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isLocatedIn"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isPlacedIn"/>
+    </AsymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isLocatedIn"/>
+    </TransitiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasAnimal"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasAnimalZone"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasCity"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasColor"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasContinent"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasCountry"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasDayOfWeek"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasEcologicalType"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasEvent"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasFacilities"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasHair"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasMonth"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasSkin"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasTicket"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasTicketType"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isLivedIn"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isLocatedIn"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isPlacedIn"/>
+    </IrreflexiveObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasAnimal"/>
         <Class IRI="#AnimalZone"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAnimalZone"/>
+        <Class IRI="#Zoo"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasCity"/>
@@ -482,6 +972,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasDayOfWeek"/>
         <Class IRI="#OpeningHour"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEcologicalType"/>
+        <Class IRI="#Animal"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasEvent"/>
@@ -524,24 +1018,24 @@
         <Class IRI="#Ticket"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasZone"/>
-        <Class IRI="#Zoo"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isEcological"/>
-        <Class IRI="#Animal"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isLivedIn"/>
         <Class IRI="#Animal"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isLocatedIn"/>
+        <Class IRI="#Place"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPlacedIn"/>
         <Class IRI="#Zoo"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasAnimal"/>
         <Class IRI="#Animal"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAnimalZone"/>
+        <Class IRI="#AnimalZone"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasCity"/>
@@ -562,6 +1056,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasDayOfWeek"/>
         <Class IRI="#DayOfWeek"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEcologicalType"/>
+        <Class IRI="#Ecological"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasEvent"/>
@@ -604,19 +1102,15 @@
         <Class IRI="#TicketType"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasZone"/>
-        <Class IRI="#AnimalZone"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isEcological"/>
-        <Class IRI="#Ecological"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#isLivedIn"/>
         <Class IRI="#AnimalZone"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isLocatedIn"/>
+        <Class IRI="#Place"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPlacedIn"/>
         <Class IRI="#Location"/>
     </ObjectPropertyRange>
     <SubDataPropertyOf>
@@ -636,12 +1130,12 @@
         <Class IRI="#OpeningHour"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#hasDay"/>
-        <Class IRI="#OpeningHour"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
         <DataProperty IRI="#hasName"/>
         <Class abbreviatedIRI="owl:Thing"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasOpeningDay"/>
+        <Class IRI="#OpeningHour"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasOpeningHour"/>
@@ -672,12 +1166,12 @@
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#hasDay"/>
-        <Datatype abbreviatedIRI="xsd:int"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
         <DataProperty IRI="#hasName"/>
         <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasOpeningDay"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasOpeningHour"/>
