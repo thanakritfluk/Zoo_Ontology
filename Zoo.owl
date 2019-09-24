@@ -46,13 +46,13 @@
         <Class IRI="#BirthdayParty"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Body"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Carnivore"/>
     </Declaration>
     <Declaration>
         <Class IRI="#City"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cleaner"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Color"/>
@@ -64,7 +64,7 @@
         <Class IRI="#Country"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#DailyPass"/>
+        <Class IRI="#DailyPassTicket"/>
     </Declaration>
     <Declaration>
         <Class IRI="#DayOfWeek"/>
@@ -74,9 +74,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Ecological"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Egg"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Event"/>
@@ -103,9 +100,6 @@
         <Class IRI="#IndoorZone"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#InformationHub"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Invertebrate"/>
     </Declaration>
     <Declaration>
@@ -124,7 +118,7 @@
         <Class IRI="#MediumHair"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Membership"/>
+        <Class IRI="#MembershipTicket"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Month"/>
@@ -139,6 +133,9 @@
         <Class IRI="#OutdoorZone"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Oviparous"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#ParkingLot"/>
     </Declaration>
     <Declaration>
@@ -148,10 +145,13 @@
         <Class IRI="#RainForest"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Reception"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Region"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Reproduction"/>
+        <Class IRI="#ReproductiveMethod"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Reptile"/>
@@ -160,7 +160,7 @@
         <Class IRI="#Restaurant"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Sawannah"/>
+        <Class IRI="#Savannah"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Shop"/>
@@ -172,10 +172,10 @@
         <Class IRI="#Souvenirs"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Staff"/>
+        <Class IRI="#TicketEntranceType"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Ticket"/>
+        <Class IRI="#TicketSeller"/>
     </Declaration>
     <Declaration>
         <Class IRI="#TicketType"/>
@@ -184,13 +184,19 @@
         <Class IRI="#Toilet"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#TouristInformationCentre"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#TropicalForest"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#VenueFuntion"/>
+        <Class IRI="#Venues"/>
     </Declaration>
     <Declaration>
         <Class IRI="#VeterinaryService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Viviparous"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Wagon"/>
@@ -202,7 +208,13 @@
         <Class IRI="#WheelChair"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Worker"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Zoo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Zookeeper"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasAnimal"/>
@@ -247,16 +259,16 @@
         <ObjectProperty IRI="#hasRegion"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasReproduction"/>
+        <ObjectProperty IRI="#hasReproductiveMethod"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasTicket"/>
+        <ObjectProperty IRI="#hasTicketEntranceType"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasTicketType"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isLivedIn"/>
+        <ObjectProperty IRI="#isLivingIn"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isLocatedIn"/>
@@ -271,10 +283,10 @@
         <DataProperty IRI="#hasAgeRange"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasCloseHour"/>
+        <DataProperty IRI="#hasClosingTimeOfAnimalZone"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasCloseTime"/>
+        <DataProperty IRI="#hasClosingTimeOfZoo"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasName"/>
@@ -283,10 +295,10 @@
         <DataProperty IRI="#hasOpeningDay"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasOpeningHour"/>
+        <DataProperty IRI="#hasOpeningTimeOfAnimalzone"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasOpeningTime"/>
+        <DataProperty IRI="#hasOpeningTimeOfZoo"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasPrice"/>
@@ -367,8 +379,8 @@
     <EquivalentClasses>
         <Class IRI="#Animal"/>
         <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#hasReproduction"/>
-            <Class IRI="#Reproduction"/>
+            <ObjectProperty IRI="#hasReproductiveMethod"/>
+            <Class IRI="#ReproductiveMethod"/>
         </ObjectExactCardinality>
     </EquivalentClasses>
     <EquivalentClasses>
@@ -471,19 +483,19 @@
     <EquivalentClasses>
         <Class IRI="#OpeningHour"/>
         <DataMinCardinality cardinality="1">
-            <DataProperty IRI="#hasOpeningHour"/>
+            <DataProperty IRI="#hasOpeningTimeOfZoo"/>
             <Datatype abbreviatedIRI="xsd:dateTime"/>
         </DataMinCardinality>
     </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#OpeningHour"/>
         <DataExactCardinality cardinality="1">
-            <DataProperty IRI="#hasCloseHour"/>
+            <DataProperty IRI="#hasClosingTimeOfZoo"/>
             <Datatype abbreviatedIRI="xsd:dateTime"/>
         </DataExactCardinality>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class IRI="#Ticket"/>
+        <Class IRI="#TicketEntranceType"/>
         <DataMinCardinality cardinality="1">
             <DataProperty IRI="#hasTicketFee"/>
             <Datatype abbreviatedIRI="xsd:double"/>
@@ -539,14 +551,14 @@
     <SubClassOf>
         <Class IRI="#AnimalZone"/>
         <DataSomeValuesFrom>
-            <DataProperty IRI="#hasCloseTime"/>
+            <DataProperty IRI="#hasClosingTimeOfAnimalZone"/>
             <Datatype abbreviatedIRI="xsd:dateTime"/>
         </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AnimalZone"/>
         <DataMinCardinality cardinality="1">
-            <DataProperty IRI="#hasOpeningTime"/>
+            <DataProperty IRI="#hasOpeningTimeOfAnimalzone"/>
             <Datatype abbreviatedIRI="xsd:dateTime"/>
         </DataMinCardinality>
     </SubClassOf>
@@ -568,11 +580,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#BirthdayParty"/>
-        <Class IRI="#VenueFuntion"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Body"/>
-        <Class IRI="#Reproduction"/>
+        <Class IRI="#Venues"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Carnivore"/>
@@ -583,6 +591,10 @@
         <Class IRI="#Place"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Cleaner"/>
+        <Class IRI="#Worker"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Continent"/>
         <Class IRI="#Place"/>
     </SubClassOf>
@@ -591,16 +603,12 @@
         <Class IRI="#Place"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#DailyPass"/>
-        <Class IRI="#Ticket"/>
+        <Class IRI="#DailyPassTicket"/>
+        <Class IRI="#TicketEntranceType"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DesertEdge"/>
         <Class IRI="#OutdoorZone"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Egg"/>
-        <Class IRI="#Reproduction"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#FirstAidUnit"/>
@@ -621,10 +629,6 @@
     <SubClassOf>
         <Class IRI="#IndoorZone"/>
         <Class IRI="#AnimalZone"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#InformationHub"/>
-        <Class IRI="#Facilities"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Invertebrate"/>
@@ -668,8 +672,8 @@
         <Class IRI="#Hair"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Membership"/>
-        <Class IRI="#Ticket"/>
+        <Class IRI="#MembershipTicket"/>
+        <Class IRI="#TicketEntranceType"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Ommivore"/>
@@ -680,12 +684,20 @@
         <Class IRI="#AnimalZone"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Oviparous"/>
+        <Class IRI="#ReproductiveMethod"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ParkingLot"/>
         <Class IRI="#Facilities"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#RainForest"/>
         <Class IRI="#OutdoorZone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Reception"/>
+        <Class IRI="#Worker"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Reptile"/>
@@ -696,7 +708,7 @@
         <Class IRI="#Shop"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Sawannah"/>
+        <Class IRI="#Savannah"/>
         <Class IRI="#OutdoorZone"/>
     </SubClassOf>
     <SubClassOf>
@@ -712,25 +724,36 @@
         <Class IRI="#Shop"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Staff"/>
-        <Class IRI="#Facilities"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Ticket"/>
+        <Class IRI="#TicketEntranceType"/>
         <DataSomeValuesFrom>
             <DataProperty IRI="#hasTicketType"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#TicketSeller"/>
+        <Class IRI="#Worker"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#TicketType"/>
-        <DataAllValuesFrom>
+        <DataSomeValuesFrom>
             <DataProperty IRI="#hasAgeRange"/>
             <Datatype abbreviatedIRI="xsd:string"/>
-        </DataAllValuesFrom>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TicketType"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Toilet"/>
+        <Class IRI="#Facilities"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TouristInformationCentre"/>
         <Class IRI="#Facilities"/>
     </SubClassOf>
     <SubClassOf>
@@ -738,7 +761,7 @@
         <Class IRI="#OutdoorZone"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#VenueFuntion"/>
+        <Class IRI="#Venues"/>
         <Class IRI="#Facilities"/>
     </SubClassOf>
     <SubClassOf>
@@ -746,16 +769,24 @@
         <Class IRI="#Facilities"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Viviparous"/>
+        <Class IRI="#ReproductiveMethod"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Wagon"/>
         <Class IRI="#Accesibility"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Wedding"/>
-        <Class IRI="#VenueFuntion"/>
+        <Class IRI="#Venues"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#WheelChair"/>
         <Class IRI="#Accesibility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Worker"/>
+        <Class IRI="#Facilities"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Zoo"/>
@@ -767,8 +798,8 @@
     <SubClassOf>
         <Class IRI="#Zoo"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#hasTicket"/>
-            <Class IRI="#Ticket"/>
+            <ObjectProperty IRI="#hasTicketEntranceType"/>
+            <Class IRI="#TicketEntranceType"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -792,17 +823,17 @@
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataExactCardinality>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Zookeeper"/>
+        <Class IRI="#Worker"/>
+    </SubClassOf>
     <DisjointClasses>
         <Class IRI="#Activity"/>
         <Class IRI="#Event"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Activity"/>
-        <Class IRI="#Ticket"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Body"/>
-        <Class IRI="#Egg"/>
+        <Class IRI="#TicketEntranceType"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#City"/>
@@ -822,7 +853,7 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Event"/>
-        <Class IRI="#Ticket"/>
+        <Class IRI="#TicketEntranceType"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#IndoorZone"/>
@@ -833,7 +864,11 @@
         <Class IRI="#Place"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#Ticket"/>
+        <Class IRI="#Oviparous"/>
+        <Class IRI="#Viviparous"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#TicketEntranceType"/>
         <Class IRI="#TicketType"/>
     </DisjointClasses>
     <ClassAssertion>
@@ -934,7 +969,7 @@
     </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasAnimal"/>
-        <ObjectProperty IRI="#isLivedIn"/>
+        <ObjectProperty IRI="#isLivingIn"/>
     </InverseObjectProperties>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasCity"/>
@@ -952,7 +987,7 @@
         <ObjectProperty IRI="#hasRegion"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
-        <ObjectProperty IRI="#hasReproduction"/>
+        <ObjectProperty IRI="#hasReproductiveMethod"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#isLocatedIn"/>
@@ -964,7 +999,7 @@
         <ObjectProperty IRI="#hasAnimal"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#isLivedIn"/>
+        <ObjectProperty IRI="#isLivingIn"/>
     </InverseFunctionalObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#hasAnimal"/>
@@ -1009,16 +1044,16 @@
         <ObjectProperty IRI="#hasRegion"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#hasReproduction"/>
+        <ObjectProperty IRI="#hasReproductiveMethod"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#hasTicket"/>
+        <ObjectProperty IRI="#hasTicketEntranceType"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#hasTicketType"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#isLivedIn"/>
+        <ObjectProperty IRI="#isLivingIn"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#isLocatedIn"/>
@@ -1066,13 +1101,13 @@
         <ObjectProperty IRI="#hasMonth"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#hasTicket"/>
+        <ObjectProperty IRI="#hasTicketEntranceType"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#hasTicketType"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#isLivedIn"/>
+        <ObjectProperty IRI="#isLivingIn"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#isLocatedIn"/>
@@ -1126,7 +1161,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasMonth"/>
-        <Class IRI="#Reptile"/>
+        <Class IRI="#OpeningHour"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasOpeningSchedule"/>
@@ -1137,19 +1172,19 @@
         <Class IRI="#Animal"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasReproduction"/>
+        <ObjectProperty IRI="#hasReproductiveMethod"/>
         <Class IRI="#Animal"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasTicket"/>
+        <ObjectProperty IRI="#hasTicketEntranceType"/>
         <Class IRI="#Zoo"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasTicketType"/>
-        <Class IRI="#Ticket"/>
+        <Class IRI="#TicketEntranceType"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isLivedIn"/>
+        <ObjectProperty IRI="#isLivingIn"/>
         <Class IRI="#Animal"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1217,19 +1252,19 @@
         <Class IRI="#Region"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasReproduction"/>
-        <Class IRI="#Reproduction"/>
+        <ObjectProperty IRI="#hasReproductiveMethod"/>
+        <Class IRI="#ReproductiveMethod"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasTicket"/>
-        <Class IRI="#Ticket"/>
+        <ObjectProperty IRI="#hasTicketEntranceType"/>
+        <Class IRI="#TicketEntranceType"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasTicketType"/>
         <Class IRI="#TicketType"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isLivedIn"/>
+        <ObjectProperty IRI="#isLivingIn"/>
         <Class IRI="#AnimalZone"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -1245,7 +1280,7 @@
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
-        <DataProperty IRI="#hasOpeningTime"/>
+        <DataProperty IRI="#hasOpeningTimeOfAnimalzone"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <DataPropertyDomain>
@@ -1254,15 +1289,15 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasAgeRange"/>
-        <Class IRI="#Ticket"/>
+        <Class IRI="#TicketEntranceType"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#hasCloseHour"/>
-        <Class IRI="#OpeningHour"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasCloseTime"/>
+        <DataProperty IRI="#hasClosingTimeOfAnimalZone"/>
         <Class IRI="#AnimalZone"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasClosingTimeOfZoo"/>
+        <Class IRI="#OpeningHour"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasName"/>
@@ -1273,12 +1308,12 @@
         <Class IRI="#OpeningHour"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#hasOpeningHour"/>
-        <Class IRI="#OpeningHour"/>
+        <DataProperty IRI="#hasOpeningTimeOfAnimalzone"/>
+        <Class IRI="#AnimalZone"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#hasOpeningTime"/>
-        <Class IRI="#AnimalZone"/>
+        <DataProperty IRI="#hasOpeningTimeOfZoo"/>
+        <Class IRI="#OpeningHour"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasPrice"/>
@@ -1286,7 +1321,7 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasTicketFee"/>
-        <Class IRI="#Ticket"/>
+        <Class IRI="#TicketEntranceType"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasTicketType"/>
@@ -1301,11 +1336,11 @@
         <Datatype abbreviatedIRI="xsd:integer"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#hasCloseHour"/>
+        <DataProperty IRI="#hasClosingTimeOfAnimalZone"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#hasCloseTime"/>
+        <DataProperty IRI="#hasClosingTimeOfZoo"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -1317,11 +1352,11 @@
         <Datatype abbreviatedIRI="xsd:int"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#hasOpeningHour"/>
+        <DataProperty IRI="#hasOpeningTimeOfAnimalzone"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#hasOpeningTime"/>
+        <DataProperty IRI="#hasOpeningTimeOfZoo"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -1336,6 +1371,496 @@
         <DataProperty IRI="#hasTicketType"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Accesibility</IRI>
+        <Literal xml:lang="en">service or facility which able to be easily obtained or used during visiting around the zoo.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AccesibilityMap</IRI>
+        <Literal xml:lang="en">zoo&apos;s paper map</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Activity</IRI>
+        <Literal xml:lang="en">a thing that a person or group does or has done at the zoo in the specific time such as feeding animals with milk/food.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Amphibian</IRI>
+        <Literal xml:lang="en">a cold-blooded vertebrate animal of a class that comprises the frogs, toads, newts, and salamanders. They are distinguished by having an aquatic gill-breathing larval stage followed (typically) by a terrestrial lung-breathing adult stage.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Animal</IRI>
+        <Literal xml:lang="en">a living organism that feeds on organic matter, typically having specialized sense organs and nervous system and able to respond rapidly to stimuli.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AnimalZone</IRI>
+        <Literal xml:lang="en">an area or stretch of land in the zoo having a particular characteristic --consist of outdoor and indoor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Aquarium</IRI>
+        <Literal xml:lang="en">one of the indoor zone, normally has a transparent tank of water in which fish and other water creatures and plants are kept.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Arctic</IRI>
+        <Literal xml:lang="en">one of the indoor zone which has very cold weather. In this case, It is the zone where the animal which normally lived in the cold area will be appeared or located here.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Bird</IRI>
+        <Literal xml:lang="en">a warm-blooded egg-laying vertebrate distinguished by the possession of feathers, wings, and a beak and (typically) by being able to fly.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BirdCage</IRI>
+        <Literal xml:lang="en">one of the indoor zone where has cage for pet birds, typically made of wire or cane.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BirthdayParty</IRI>
+        <Literal xml:lang="en">A party for celebrating the anniversary of the day on which a person was born.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Carnivore</IRI>
+        <Literal xml:lang="en">an animal that feeds on flesh.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#City</IRI>
+        <Literal xml:lang="en">a large town.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Cleaner</IRI>
+        <Literal xml:lang="en">a person employed to clean the entire of specific area at the zoo.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Color</IRI>
+        <Literal xml:lang="en">animal&apos;s color</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Continent</IRI>
+        <Literal xml:lang="en">any of the world&apos;s main continuous expanses of land (Africa, Antarctica, Asia, Australia, Europe, North America, South America).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Country</IRI>
+        <Literal xml:lang="en">a nation with its own government, occupying a particular territory.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DailyPassTicket</IRI>
+        <Literal xml:lang="en">A ticket to enter a zoo just one day, single use ticket.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DayOfWeek</IRI>
+        <Literal xml:lang="en">A list of day in a week, consists of Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DesertEdge</IRI>
+        <Literal xml:lang="en">one of the outdoor zone where located animals which normally lived in dessert area.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Ecological</IRI>
+        <Literal xml:lang="en">relating to or concerned with the relation of living organisms to one another and to their physical surroundings.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Event</IRI>
+        <Literal xml:lang="en">a planned public or social occasion in the zoo such as parade and holiday special event.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Facilities</IRI>
+        <Literal xml:lang="en">an option or service in the zoo that gives visitors the opportunity to do or benefit from something.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FirstAidUnit</IRI>
+        <Literal xml:lang="en">the place where located in the zoo and has duty to help a sick or injured person until full medical treatment is available.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Fish</IRI>
+        <Literal xml:lang="en">a limbless cold-blooded vertebrate animal with gills and fins and living wholly in water.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Hair</IRI>
+        <Literal xml:lang="en">animals&apos; hair types.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Herbivore</IRI>
+        <Literal xml:lang="en">an animal that feeds on plants.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Hotel</IRI>
+        <Literal xml:lang="en">an establishment providing accommodations, meals, and other services for zoo&apos;s visitors and tourists.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#IndoorZone</IRI>
+        <Literal xml:lang="en">an indoor area where animals are located in.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Invertebrate</IRI>
+        <Literal xml:lang="en">an animal lacking a backbone, such as an arthropod, mollusk, annelid, coelenterate, etc. The invertebrates constitute an artificial division of the animal kingdom, comprising 95 percent of animal species and about 30 different phyla.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Location</IRI>
+        <Literal xml:lang="en">a particular place or position of the zoo.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Locker</IRI>
+        <Literal xml:lang="en">the small public lockable closets or compartments for keeping visitors&apos; belongings during visiting the zoo.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LongHair</IRI>
+        <Literal xml:lang="en">measuring a great distance from end to end of animal&apos;s hair.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Mammals</IRI>
+        <Literal xml:lang="en">a warm-blooded vertebrate animal of a class that is distinguished by the possession of hair or fur, the secretion of milk by females for the nourishment of the young, and (typically) the birth of live young.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MediumHair</IRI>
+        <Literal xml:lang="en">measuring a medium distance from end to end of animal&apos;s hair.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MembershipTicket</IRI>
+        <Literal xml:lang="en">A ticket to enter a zoo in a specific time interval, depends on which types of membership applied such as annual pass or monthly pass.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Month</IRI>
+        <Literal xml:lang="en">each of the twelve named periods into which a year is divided.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Ommivore</IRI>
+        <Literal xml:lang="en">an animal that eats food of both plant and animal origin.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OpeningHour</IRI>
+        <Literal xml:lang="en">the times during a zoo is open for visiting.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OutdoorZone</IRI>
+        <Literal xml:lang="en">an outdoor area where animals are located in.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Oviparous</IRI>
+        <Literal xml:lang="en">producing young by means of eggs that are hatched after they have been laid by the parent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ParkingLot</IRI>
+        <Literal xml:lang="en">an area where visitors&apos; cars or other vehicles left temporarily during visiting the zoo.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Place</IRI>
+        <Literal xml:lang="en">a particular position of a zoo.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#RainForest</IRI>
+        <Literal xml:lang="en">one of the outdoor zone where located animals which normally lived in rainforest area. (Rainforest is a luxuriant, dense forest rich in biodiversity, found typically in tropical areas with consistently heavy rainfall.)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Reception</IRI>
+        <Literal xml:lang="en">a person employed in a tourist information centre to answer the questions and greet visitors.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Region</IRI>
+        <Literal xml:lang="en">an area or division, especially part of a country or the world having definable characteristics but not always fixed boundaries.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ReproductiveMethod</IRI>
+        <Literal xml:lang="en">the production&apos;s method of offspring by a sexual or asexual process.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Reptile</IRI>
+        <Literal xml:lang="en">a vertebrate animal of a class that includes snakes, lizards, crocodiles, turtles, and tortoises. They are distinguished by having a dry scaly skin and typically laying soft-shelled eggs on land.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Restaurant</IRI>
+        <Literal xml:lang="en">a place where vistors pay to sit and eat meals that are cooked and served on the premises.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Savannah</IRI>
+        <Literal xml:lang="en">one of the outdoor zone where located animals which normally lived in Savannah area. (a grassy plain in tropical and subtropical regions, with few trees.)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Shop</IRI>
+        <Literal xml:lang="en">a building or part of a building where goods or services are sold; a store.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ShortHair</IRI>
+        <Literal xml:lang="en">measuring a less distance from end to end of animal&apos;s hair.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Souvenirs</IRI>
+        <Literal xml:lang="en">the store where sells a thing that is kept as a reminder of a person, place, or event.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TicketEntranceType</IRI>
+        <Literal xml:lang="en">a piece of paper or small card that gives the holder a certain right, especially to enter a zoo.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TicketSeller</IRI>
+        <Literal xml:lang="en">a person who does sell the tickets for entering to the zoo.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TicketType</IRI>
+        <Literal xml:lang="en">Type of zoo&apos;s ticket consists of adult, senior, kid, group, tourist, and promotion tickets. Their price will be depending on which type it is.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Toilet</IRI>
+        <Literal xml:lang="en">a public restroom with a toilet and washbasin</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TouristInformationCentre</IRI>
+        <Literal xml:lang="en">The place where visitors can ask for information or guide map that must be helpful for visiting in the zoo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TropicalForest</IRI>
+        <Literal xml:lang="en">one of the outdoor zone where located animals which normally lived in tropical forest area. (Tropical forests are forested landscapes in tropical regions: i.e. land areas approximately bounded by the tropic of Cancer and Capricorn, but possibly affected by other factors such as prevailing winds.)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Venues</IRI>
+        <Literal xml:lang="en">the place where something happens, especially an organized event such as a wedding, concert, and party event.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#VeterinaryService</IRI>
+        <Literal xml:lang="en">A service that is relating to the diseases, injuries, and treatment of animals.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Viviparous</IRI>
+        <Literal xml:lang="en">bringing forth live young that have developed inside the body of the parent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Wagon</IRI>
+        <Literal xml:lang="en">a our-wheeled vehicle used for transporting goods or visitors around the zoo.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Wedding</IRI>
+        <Literal xml:lang="en">a marriage ceremony, especially considered as including the associated celebrations.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WheelChair</IRI>
+        <Literal xml:lang="en">a chair fitted with wheels that the zoo provided for a person who is unable to walk around the zoo as a result of illness, injury, or disability.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Worker</IRI>
+        <Literal xml:lang="en">a person who does a specified type of work or who works in a specified way.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Zoo</IRI>
+        <Literal xml:lang="en">an establishment which maintains a collection of wild animals, typically in a park or gardens, for study, conservation, or display to the public.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Zookeeper</IRI>
+        <Literal xml:lang="en">an animal attendant employed in a zoo.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAddress</IRI>
+        <Literal>This location has address.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAgeRange</IRI>
+        <Literal>This ticket entrance type has age range</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAnimal</IRI>
+        <Literal>This zoo has which animal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAnimalZone</IRI>
+        <Literal>This zoo has which animal&apos;s zones.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasCity</IRI>
+        <Literal>This place has which city.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasClosingTimeOfAnimalZone</IRI>
+        <Literal>This animal&apos;s zone has been closing at time.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasClosingTimeOfZoo</IRI>
+        <Literal>This zoo has been closing at time.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasColor</IRI>
+        <Literal>This animal has which colors.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasContinent</IRI>
+        <Literal>This place has which continents.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasCountry</IRI>
+        <Literal>This place has which countries.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDayOfWeek</IRI>
+        <Literal>This opening-hour has which day of week.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasEcologicalType</IRI>
+        <Literal>This animal has which ecological types.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasEvent</IRI>
+        <Literal>This zoo has which events occur.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasFacilities</IRI>
+        <Literal>This zoo has which facilities.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasHair</IRI>
+        <Literal>This animal has which hair&apos;s long.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasMonth</IRI>
+        <Literal>The opening-hour depends on which month it is.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasName</IRI>
+        <Literal>Things have their own names</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasOpeningDay</IRI>
+        <Literal>This zoo has opening-day on</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasOpeningSchedule</IRI>
+        <Literal>This zoo&apos;s opening-hour schedule.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasOpeningTimeOfAnimalzone</IRI>
+        <Literal>This animal&apos;s zone has been opening at time.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasOpeningTimeOfZoo</IRI>
+        <Literal>This zoo has been opening at time.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPrice</IRI>
+        <Literal>Things have their own prices.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasRegion</IRI>
+        <Literal>This animal has which regions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasReproductiveMethod</IRI>
+        <Literal>This animal has which reproductive method.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTicketEntranceType</IRI>
+        <Literal>This zoo has which ticket entrance types (single/unlimited use)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTicketFee</IRI>
+        <Literal>This entrance ticket type has fee</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTicketType</IRI>
+        <Literal>This entrance ticket has which ticket types (adult/kid/promo).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isLivingIn</IRI>
+        <Literal>This animal is living in which animal&apos;s zone.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isLocatedIn</IRI>
+        <Literal>This place is located in which places (city/country/continent).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPlacedIn</IRI>
+        <Literal>This zoo is located in which location.</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 
