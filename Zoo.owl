@@ -217,6 +217,9 @@
         <Class IRI="#Zookeeper"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#IsWorkingAt"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasAnimal"/>
     </Declaration>
     <Declaration>
@@ -700,6 +703,13 @@
         <Class IRI="#Worker"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Reception"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#IsWorkingAt"/>
+            <Class IRI="#TouristInformationCentre"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Reptile"/>
         <Class IRI="#Animal"/>
     </SubClassOf>
@@ -1002,6 +1012,9 @@
         <ObjectProperty IRI="#isLivingIn"/>
     </InverseFunctionalObjectProperty>
     <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#IsWorkingAt"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
         <ObjectProperty IRI="#hasAnimal"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
@@ -1065,6 +1078,9 @@
         <ObjectProperty IRI="#isLocatedIn"/>
     </TransitiveObjectProperty>
     <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#IsWorkingAt"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#hasAnimal"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
@@ -1115,6 +1131,10 @@
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#isPlacedIn"/>
     </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#IsWorkingAt"/>
+        <Class IRI="#Worker"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasAnimal"/>
         <Class IRI="#AnimalZone"/>
@@ -1195,6 +1215,10 @@
         <ObjectProperty IRI="#isPlacedIn"/>
         <Class IRI="#Zoo"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#IsWorkingAt"/>
+        <Class IRI="#Facilities"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasAnimal"/>
         <Class IRI="#Animal"/>
